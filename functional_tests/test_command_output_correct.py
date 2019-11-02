@@ -28,3 +28,13 @@ class OutputTest(unittest.TestCase):
             output.strip(),
             "usage: uncommonwords.py common_words_file text_file"
         )
+
+    def test_file_not_found(self):
+        # Abe tries again but the new text file is not where it is expected
+        # to be and he sees a message telling him as much
+        output = subprocess.check_output(
+            'python uncommonwords.py common.txt nonexistantfile',
+            stderr=subprocess.STDOUT,
+            shell=True
+        ).decode(sys.stdout.encoding)
+        self.assertIn(output, "No such file or directory:")

@@ -14,4 +14,4 @@ class OutputTest(unittest.TestCase):
             stderr=subprocess.STDOUT,
             shell=True
         ).decode(sys.stdout.encoding)
-        self.assertIn('Alice:    10,203', output)
+        self.assertIn('Alice:           386', output)

@@ -8,7 +8,7 @@ from uncommonwords import (
 @patch(
     'builtins.open',
     new_callable=mock_open,
-    read_data="These\nare some words."
+    read_data="These\nare some words, aren't they?"
 )
 class GetWordsFromFileTest(unittest.TestCase):
 

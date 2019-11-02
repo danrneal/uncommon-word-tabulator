@@ -1,4 +1,5 @@
 import re
+import sys
 
 
 def get_words_from_file(filename):
@@ -35,3 +36,15 @@ def sort_and_format_output(uncommon_words):
         output += f"{word.capitalize()}:{' ' * num_spaces}{occurrences}\n"
     output = output[:-1]
     return output
+
+
+def tabulate_words():
+    common_words = get_words_from_file(sys.argv[1])
+    text = get_words_from_file(sys.argv[2])
+    uncommon_words = count_uncommon_words(common_words, text)
+    output = sort_and_format_output(uncommon_words)
+    print(output)
+
+
+if __name__ == '__main__':
+    tabulate_words()

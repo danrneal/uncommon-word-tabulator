@@ -25,6 +25,6 @@ class OutputTest(unittest.TestCase):
             shell=True
         ).decode(sys.stdout.encoding)
         self.assertEqual(
-            output,
-            "usage: uncommonwords common_words_file text_file"
+            output.strip(),
+            "usage: uncommonwords.py common_words_file text_file"
         )

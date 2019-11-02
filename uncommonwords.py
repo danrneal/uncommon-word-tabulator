@@ -39,11 +39,17 @@ def sort_and_format_output(uncommon_words):
 
 
 def tabulate_words():
-    common_words = get_words_from_file(sys.argv[1])
-    text = get_words_from_file(sys.argv[2])
-    uncommon_words = count_uncommon_words(common_words, text)
-    output = sort_and_format_output(uncommon_words)
-    print(output)
+    if len(sys.argv) != 3:
+        print(
+            f"usage: {sys.argv[0]} common_words_file text_file",
+            file=sys.stderr
+        )
+    else:
+        common_words = get_words_from_file(sys.argv[1])
+        text = get_words_from_file(sys.argv[2])
+        uncommon_words = count_uncommon_words(common_words, text)
+        output = sort_and_format_output(uncommon_words)
+        print(output)
 
 
 if __name__ == '__main__':

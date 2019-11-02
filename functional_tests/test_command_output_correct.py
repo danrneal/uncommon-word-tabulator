@@ -15,3 +15,16 @@ class OutputTest(unittest.TestCase):
             shell=True
         ).decode(sys.stdout.encoding)
         self.assertIn('Alice:           386', output)
+
+    def test_invalid_number_of_arguments(self):
+        # Abe tries a new txt file but forgets to delete the old txt file. A
+        # helpful message appears.
+        output = subprocess.check_output(
+            'python uncommonwords.py common.txt alice.txt alice2.txt',
+            stderr=subprocess.STDOUT,
+            shell=True
+        ).decode(sys.stdout.encoding)
+        self.assertEqual(
+            output,
+            "usage: uncommonwords common_words_file text_file"
+        )

@@ -3,11 +3,15 @@ import sys
 
 
 def get_words_from_file(filename):
-    with open(filename) as f:
-        words = re.findall(r"[\w']+", f.read().lower())
-        while "'" in words:
-            words.remove("'")
-        return words
+    try:
+        with open(filename) as f:
+            words = re.findall(r"[\w']+", f.read().lower())
+            while "'" in words:
+                words.remove("'")
+            return words
+    except FileNotFoundError as err:
+        print(err, file=sys.stderr)
+        sys.exit()
 
 
 def count_uncommon_words(common_words, text):

@@ -19,6 +19,20 @@ class GetWordsFromFileTest(unittest.TestCase):
             ['these', 'are', 'some', 'words', "aren't", 'they']
         )
 
+    @patch('builtins.print')
+    @patch('sys.exit')
+    def test_nonexistant_files_are_caught(
+        self, mock_exit, mock_print, mock_with_open
+    ):
+        err = FileNotFoundError()
+        mock_with_open.side_effect = err
+        uncommonwords.get_words_from_file('words.txt')
+        mock_with_open.assert_called_once_with('words.txt')
+        mock_print.assert_called_once_with(
+            err, file=sys.stderr
+        )
+        mock_exit.assert_called_once()
+
 
 class CountUncommonWordsTest(unittest.TestCase):
 

@@ -37,4 +37,4 @@ class OutputTest(unittest.TestCase):
             stderr=subprocess.STDOUT,
             shell=True
         ).decode(sys.stdout.encoding)
-        self.assertIn(output, "No such file or directory:")
+        self.assertIn("No such file or directory:", output)

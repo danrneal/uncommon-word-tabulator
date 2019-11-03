@@ -16,6 +16,9 @@ class OutputTest(unittest.TestCase):
         ).decode(sys.stdout.encoding)
         self.assertIn('Alice:           386', output)
 
+        # He also notices that common words like "that" aren't in the output.
+        self.assertNotIn('that', output)
+
     def test_invalid_number_of_arguments(self):
         # Abe tries a new txt file but forgets to delete the old txt file. A
         # helpful message appears.

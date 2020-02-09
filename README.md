@@ -13,7 +13,7 @@ usage: uncommonwords.py common_words_file text_file
 ```
 
 ###### Note:
-When comparing words, possessives are counted as separate words from their 
+When comparing words, possessives are counted as separate words from their
 non-possessive counterparts (i.e. "Alice" is a separate word from "Alice's").
 Non-words such as chapter numbers or headings are also counted as words.
 
@@ -49,9 +49,13 @@ describe the desired behavior from the user's point of view and then a unit
 test to define how I wanted to the code to behave. That is the point where I
 wrote the "actual" code to get the unit tests to pass. Once I had passing
 unit tests, I checked to see if the FT passed; if they didn't pass, I wrote
-more unit tests and corresponding code. 
+more unit tests and corresponding code.
 
 While this may seem unnecessary for a program of such a small size and may
 seem like showing off or overdoing, TDD principles help to create quality,
 maintainable code and as such I believe are good habits to foster even on a
 small project such as this.
+
+## License
+
+Uncommon Word Tabulator is licensed under the [MIT license](https://github.com/danrneal/uncommon-word-tabulator/blob/master/LICENSE).

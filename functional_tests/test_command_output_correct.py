@@ -29,7 +29,7 @@ class OutputTest(unittest.TestCase):
         ).decode(sys.stdout.encoding)
         self.assertEqual(
             output.strip(),
-            "usage: uncommonwords.py common_words_file text_file"
+            "Usage: uncommonwords.py common_words_file text_file"
         )
 
     def test_file_not_found(self):

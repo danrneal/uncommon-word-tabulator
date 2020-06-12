@@ -45,7 +45,7 @@ def sort_and_format_output(uncommon_words):
 def tabulate_words():
     if len(sys.argv) != 3:
         print(
-            f"usage: {sys.argv[0]} common_words_file text_file",
+            f"Usage: {sys.argv[0]} common_words_file text_file",
             file=sys.stderr
         )
     else:

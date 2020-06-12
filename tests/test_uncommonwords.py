@@ -103,6 +103,6 @@ class TabulateWordsTest(unittest.TestCase):
         mock_count_uncommon_words.assert_not_called()
         mock_sort_and_format_output.assert_not_called()
         mock_print.assert_called_once_with(
-            "usage: uncommonwords.py common_words_file text_file",
+            "Usage: uncommonwords.py common_words_file text_file",
             file=sys.stderr
         )

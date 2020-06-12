@@ -4,11 +4,11 @@ This is a command line program to tabulate the appearance and frequency of uncom
 
 ## Usage
 
-```shell
-usage: uncommonwords.py common_words_file text_file
+```bash
+Usage: uncommonwords.py common_words_file text_file
 ```
 
-## _Note:_
+### _Note:_
 
 _When comparing words, possessives are counted as separate words from their non-possessive counterparts (i.e. "Alice" is a separate word from "Alice's"). Non-words such as chapter numbers or headings are also counted as words._
 
@@ -20,16 +20,16 @@ This repository contains a test suite consisting of functional tests and unit te
 
 These test the program from the outside, from a user's point of view and are also known as Acceptance Tests or End-to-End Tests. You can run them with the following command:
 
-```shell
-python3 -m unittest discover functional_tests/
+```bash
+python3 -m unittest discover functional_tests
 ```
 
 ### Unit Tests
 
 These test the program from the inside, from developer's point of view. You can run them with the following command:
 
-```shell
-python3 -m unittest discover tests/
+```bash
+python3 -m unittest discover tests
 ```
 
 ### A comment on TDD
